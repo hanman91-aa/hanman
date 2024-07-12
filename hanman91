@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>韩漫展示</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .comic {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .comic-item {
+            width: 200px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+            text-align: center;
+        }
+        .comic-item img {
+            width: 100%;
+            height: auto;
+        }
+        .comic-item h3 {
+            margin: 10px 0;
+            font-size: 1em;
+        }
+        .comic-item p {
+            margin: 0 10px 10px;
+            font-size: 0.9em;
+            color: #666;
+        }
+        /* 弹窗广告样式 */
+        .popup {
+            display: none;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            padding: 20px;
+            text-align: center;
+        }
+        .popup h2 {
+            margin: 0 0 10px;
+        }
+        .popup button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .popup button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+    <script>
+        function showPopup() {
+            document.getElementById('popup').style.display = 'block';
+        }
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+        window.onload = function() {
+            setTimeout(showPopup, 5000);  // 5秒后显示弹窗广告
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>韩漫展示</h1>
+    </header>
+    <div class="container">
+        <div class="comic">
+            <div class="comic-item">
+                <img src="cover1.jpg" alt="漫画封面1">
+                <h3>漫画标题1</h3>
+                <p>简介...</p>
+            </div>
+            <div class="comic-item">
+                <img src="cover2.jpg" alt="漫画封面2">
+                <h3>漫画标题2</h3>
+                <p>简介...</p>
+            </div>
+            <!-- 添加更多漫画项 -->
+        </div>
+    </div>
+    <div id="popup" class="popup">
+        <h2>广告标题</h2>
+        <p>广告内容...</p>
+        <button onclick="closePopup()">关闭</button>
+    </div>
+</body>
+</html>
